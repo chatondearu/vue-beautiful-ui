@@ -1,6 +1,23 @@
+@import 'colors-palettes';
+
+
 /**
- * Colors
+ * Colors bUI
  */
 
-$bui-primary-color: #2eb7ed !default;
-$white: #ffffff !default;
+$white: #ffffff;
+$dark: $grey-900;
+
+$bui-primary-color: #2eb7ed;
+$bui-secondary-color: #2eb7ed;
+
+$bui-info-color: $bui-primary-color;
+$bui-valid-color: #42b983;
+$bui-warning-color: #42b983;
+$bui-alert-color: #42b983;
+
+/**
+ * Radius
+ */
+
+$bui-raduis-sm: 2px;

@@ -3,6 +3,10 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
+var sassPaths = require('node-neat').includePaths.map(function(sassPath) {
+  return "includePaths[]=" + sassPath;
+}).join("&")
+
 module.exports = {
   entry: {
     app: './src/main.js'
@@ -81,5 +85,8 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders()
-  }
+  },
+  sassLoader: {
+    includePaths: [sassPaths]
+  },
 }

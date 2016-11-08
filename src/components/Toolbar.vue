@@ -1,9 +1,9 @@
 <template>
-  <a class="bui-btn" href="javascript:void(0)">
+  <div class="bui-toolbar">
     <slot>
-      First Button
+      First Toolbar
     </slot>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -19,15 +19,13 @@ export default {
   // @import '~bourbon';
   @import '../assets/_variables.scss';
 
-  .bui-btn {
+  .bui-toolbar {
     background-color: $bui-primary-color;
     color: $white;
 
-    display: inline-block;
-    line-height: 2rem;
+    display: block;
+    line-height: 3rem;
     padding: 0 .8rem;
-
-    border-radius: $bui-raduis-sm;
 
     &.bui-btn-primary {
       background-color: $bui-primary-color;
