@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script>
+<script type="javascript">
 import Button from './Button';
 
 export default {

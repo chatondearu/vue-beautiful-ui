@@ -1,38 +1,18 @@
 import './assets/themes.scss';
 
-import Vue from 'vue';
-import Vuex from 'vuex';
-import Router from 'vue-router';
-
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
 import App from './example/App';
-import Hello from './components/Hello';
+import router from './router'
 
-let router = null;
+Vue.config.productionTip = false
 
-// Vue configuration
-Vue.config.debug = true;
-
-// install plugins
-Vue.use(Router);
-Vue.use(Vuex);
-
-//
-// Setup Routing
-//
-router = new Router({
-  linkActiveClass: 'active',
-});
-
-router.map({
-  '/home': {
-    name: 'home',
-    component: Hello,
-  },
-});
-
-router.redirect({
-  '*': '/home',
-});
-
-router.start(App, '#app');
 /* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  template: '<App/>',
+  components: { App }
+})
+

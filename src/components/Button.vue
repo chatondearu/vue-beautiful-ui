@@ -1,36 +1,73 @@
 <template>
-  <a class="bui-btn" href="javascript:void(0)">
-    <slot>
-      First Button
-    </slot>
-  </a>
+  <button class="bui-button" :class="{ primary: type === 'primary' }" :disabled="disabled">
+    <icon v-if="icon" :icon="icon"></icon>
+    <slot></slot>
+  </button>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  },
-};
+<script type="javascript">
+  import Icon from './Icon'
+
+  export default {
+    name: 'bui-button',
+    props: {
+      type: String,
+      disabled: Boolean,
+      icon: String
+    },
+    components: {
+      Icon
+    }
+  }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-  // @import '~bourbon';
-  @import '../assets/_variables.scss';
+<style lang="scss" scoped>
+  @import '~style/variables.scss';
 
-  .bui-btn {
-    background-color: $bui-primary-color;
-    color: $white;
+  .bui-button {
+    background: 0 0;
+    border: none;
+    border-radius: 2px;
+    color: $dark;
 
     display: inline-block;
-    line-height: 2rem;
-    padding: 0 .8rem;
+    position: relative;
+    margin: 0;
+    padding: 0 16px;
+    height: 36px;
+    min-width: 64px;
 
-    border-radius: $bui-raduis-sm;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 36px;
+    letter-spacing: 0;
+    overflow: hidden;
 
-    &.bui-btn-primary {
-      background-color: $bui-primary-color;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $blue-grey-100;
+    }
+
+    &.primary {
+      background-color: $primary-color;
+      color: $white;
+      &:hover {
+        background-color: $blue-700;
+      }
+    }
+
+    &:disabled {
+      background-color: $blue-grey-50;
+      color: $blue-grey-300;
+      cursor: not-allowed;
     }
   }
 </style>

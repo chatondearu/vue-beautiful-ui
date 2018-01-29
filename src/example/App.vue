@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<script>
+<script type="javascript">
 import Button from '../components/Button';
 import Toolbar from '../components/Toolbar';
 
